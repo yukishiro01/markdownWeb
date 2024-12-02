@@ -1,0 +1,43 @@
+.section-hidden {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: all 1s;
+}
+
+.section-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 交错动画 */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
+/* 向下滚动箭头动画 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* 添加打字机光标效果 */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.cursor::after {
+    content: '|';
+    margin-left: 2px;
+    animation: blink 1s infinite;
+} 

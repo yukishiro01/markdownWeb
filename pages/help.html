@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助 - MarkdownWeb</title>
+    <script src="../js/tailwind.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/showdown.js"></script>
+    <script src="../js/help.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editor.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-50 px-6">
+        <div class="container mx-auto flex justify-between items-center h-24">
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../img/logoweb2.png" alt="MarkdownWeb Logo" class="h-12">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="editor.html" class="text-white hover:text-gray-200">编辑器</a>
+                    <a href="documents.html" class="text-white hover:text-gray-200">文档</a>
+                    <a href="help.html" class="text-white hover:text-gray-200">帮助</a>
+                    <a href="about.html" class="text-white hover:text-gray-200">关于</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- 这里的内容会被 JS 动态更新 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-6 pt-32 pb-20">
+        <div class="glass-effect p-8 rounded-xl">
+            <h1 class="text-3xl font-bold text-white mb-8">Markdown 语法指南</h1>
+            
+            <!-- 左侧目录，右侧内容的布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- 左侧目录 -->
+                <div class="md:col-span-1">
+                    <div class="glass-effect p-4 rounded-lg sticky top-32">
+                        <h2 class="text-xl font-bold text-white mb-4">目录</h2>
+                        <ul class="space-y-2 text-white" id="toc">
+                            <!-- 目录将由 JavaScript 动态生成 -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="md:col-span-3">
+                    <div class="preview-content text-white" id="content">
+                        <!-- 内容将由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

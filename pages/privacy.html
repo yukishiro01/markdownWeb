@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - MarkdownWeb</title>
+    <script src="../js/tailwind.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/nav.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-50 px-6">
+        <div class="container mx-auto flex justify-between items-center h-24">
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../img/logoweb2.png" alt="MarkdownWeb Logo" class="h-12">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="editor.html" class="text-white hover:text-gray-200">编辑器</a>
+                    <a href="documents.html" class="text-white hover:text-gray-200">文档</a>
+                    <a href="help.html" class="text-white hover:text-gray-200">帮助</a>
+                    <a href="about.html" class="text-white hover:text-gray-200">关于</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- 这里的内容会被 JS 动态更新 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-6 pt-32 pb-20">
+        <div class="glass-effect p-8 rounded-xl text-white max-w-3xl mx-auto">
+            <h1 class="text-3xl font-bold mb-8">隐私政策</h1>
+            
+            <div class="space-y-6">
+                <section>
+                    <h2 class="text-xl font-bold mb-4">1. 数据存储</h2>
+                    <p>所有用户数据均存储在浏览器的本地存储中，不会上传到任何服务器。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold mb-4">2. 数据使用</h2>
+                    <p>我们不会收集、使用或分享您的任何个人信息。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold mb-4">3. 本地存储</h2>
+                    <p>用户可以随时清除浏览器数据来删除所有存储的信息。</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold mb-4">4. 安全性</h2>
+                    <p>请注意定期备份重要数据，因为本地存储可能会被清除。</p>
+                </section>
+            </div>
+            
+            <!-- 添加返回按钮 -->
+            <div class="mt-8 text-center">
+                <button onclick="history.back()" 
+                        class="border-2 border-white text-white px-6 py-2 rounded-lg font-bold hover:bg-white hover:text-purple-600 hover-scale">
+                    返回上一页
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Nav.updateNavState();
+        });
+    </script>
+</body>
+</html> 

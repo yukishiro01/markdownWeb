@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkdownWeb - 现代化的 Markdown 编辑平台</title>
+    <script src="js/tailwind.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/toast.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-50 px-6">
+        <div class="container mx-auto flex justify-between items-center h-24">
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="flex items-center">
+                    <img src="img/logoweb2.png" alt="MarkdownWeb Logo" class="h-12">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="pages/editor.html" class="text-white hover:text-gray-200">编辑器</a>
+                    <a href="pages/documents.html" class="text-white hover:text-gray-200">文档</a>
+                    <a href="pages/help.html" class="text-white hover:text-gray-200">帮助</a>
+                    <a href="pages/about.html" class="text-white hover:text-gray-200">关于</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- 这里的内容会被 JS 动态更新 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-6 pt-32 pb-20">
+        <!-- 展示区域 -->
+        <div class="text-center text-white mb-20">
+            <h1 id="typewriter" class="text-6xl font-bold mb-6 transition-all duration-300">
+            </h1>
+            <p class="text-xl mb-12 opacity-90">
+                简洁优雅的界面，强大的编辑功能，让写作成为一种享受
+            </p>
+            <div id="actionButtons" class="flex justify-center space-x-6 opacity-0 transition-all duration-300">
+                <a href="pages/editor.html" 
+                   class="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 hover-scale">
+                    开始写作
+                </a>
+                <a href="pages/help.html" 
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-purple-600 hover-scale">
+                    查看教程
+                </a>
+            </div>
+        </div>
+
+        <!-- 特性展示 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div class="glass-effect p-8 rounded-xl text-white hover-scale md:col-span-2">
+                <h3 class="text-xl font-bold mb-4">实时预览</h3>
+                <p class="opacity-90">所见即所得的编辑体验，让您专注于内容创作。支持完整的 Markdown 语法，包括表格、代码高亮等高级特性。</p>
+                <a href="pages/editor.html" class="inline-block mt-4 text-white hover:text-gray-200">立即体验 →</a>
+            </div>
+            <div class="glass-effect p-8 rounded-xl text-white hover-scale">
+                <h3 class="text-xl font-bold mb-4">本地存储</h3>
+                <p class="opacity-90">数据安全存储在本地，无需担心隐私泄露</p>
+                <a href="pages/documents.html" class="inline-block mt-4 text-white hover:text-gray-200">管理文档 →</a>
+            </div>
+            <div class="glass-effect p-8 rounded-xl text-white hover-scale">
+                <h3 class="text-xl font-bold mb-4">主题定制</h3>
+                <p class="opacity-90">支持明暗主题切换，打造专属写作环境</p>
+                <a href="pages/settings.html" class="inline-block mt-4 text-white hover:text-gray-200">设置主题 →</a>
+            </div>
+            <div class="glass-effect p-8 rounded-xl text-white hover-scale">
+                <h3 class="text-xl font-bold mb-4">使用教程</h3>
+                <p class="opacity-90">详尽的 Markdown 语法指南和功能说明</p>
+                <a href="pages/help.html" class="inline-block mt-4 text-white hover:text-gray-200">查看教程 →</a>
+            </div>
+            <div class="glass-effect p-8 rounded-xl text-white hover-scale">
+                <h3 class="text-xl font-bold mb-4">关于我们</h3>
+                <p class="opacity-90">了解项目背景和开发团队</p>
+                <a href="pages/about.html" class="inline-block mt-4 text-white hover:text-gray-200">了解更多 →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="glass-effect text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="opacity-90">© 2024 MarkdownWeb. 2421010607 郭晓琪.</p>
+        </div>
+    </footer>
+
+    <!-- 在 body 末尾添加脚本 -->
+    <script>
+        // 页面加载时更新导航栏状态
+        document.addEventListener('DOMContentLoaded', () => {
+            Nav.updateNavState();
+        });
+    </script>
+</body>
+</html> 

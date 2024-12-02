@@ -1,0 +1,161 @@
+<!-- 这个html是保存下载的样例 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11111</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .preview-content h1 { font-size: 2.5em; font-weight: bold; margin: 24px 0 16px; }
+        .preview-content h2 { font-size: 2em; font-weight: bold; margin: 24px 0 16px; }
+        .preview-content h3 { font-size: 1.5em; font-weight: bold; margin: 24px 0 16px; }
+        .preview-content h4 { font-size: 1.25em; font-weight: bold; margin: 24px 0 16px; }
+        .preview-content h5 { font-size: 1.1em; font-weight: bold; margin: 24px 0 16px; }
+        .preview-content h6 { font-size: 1em; font-weight: bold; margin: 24px 0 16px; }
+        
+        .preview-content p { margin: 0 0 16px; line-height: 1.6; }
+        
+        .preview-content ul, 
+        .preview-content ol { margin: 0 0 16px; padding-left: 2em; }
+        
+        .preview-content li { margin: 0.25em 0; }
+        .preview-content li > p { margin-top: 16px; }
+        
+        .preview-content pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 6px;
+            overflow: auto;
+            margin: 16px 0;
+        }
+        
+        .preview-content code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 85%;
+            padding: 0.2em 0.4em;
+            background-color: #f6f8fa;
+            border-radius: 3px;
+        }
+        
+        .preview-content pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        .preview-content blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 16px 0;
+        }
+        
+        .preview-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        
+        .preview-content table th,
+        .preview-content table td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        
+        .preview-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 16px 0;
+        }
+        
+        .preview-content mark {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-content">
+        <h1 id="欢迎使用-markdownweb-编辑器">欢迎使用 MarkdownWeb 编辑器</h1>
+<h2 id="快速开始">快速开始</h2>
+<ol>
+<li>在左侧输入 Markdown 文本</li>
+<li>右侧实时预览渲染效果</li>
+<li>文档会自动保存</li>
+</ol>
+<h3 id="支持的功能">支持的功能</h3>
+<ul>
+<li>实时预览</li>
+<li>自动保存</li>
+<li>GitHub 风格 Markdown</li>
+<li><mark>文本高亮</mark> 支持</li>
+<li>数学公式</li>
+<li>代码高亮</li>
+<li>表格</li>
+<li>任务列表</li>
+<li>等等…</li>
+</ul>
+<h3 id="文本高亮示例">文本高亮示例</h3>
+<p>你可以<mark>高亮任何文本</mark>，它会在预览中显示醒目的背景。</p>
+<h3 id="图片示例">图片示例</h3>
+<p><img src="../img/Cat.jpg" alt="编辑器示例"></p>
+<p>请注意，图片路径需要使用<mark>相对路径</mark>，并且图片需要放在<mark>img</mark>文件夹中。</p>
+<h3 id="表格示例">表格示例</h3>
+<table>
+<thead>
+<tr>
+<th id="���能">���能</th>
+<th id="支持" style="text-align:center;">支持</th>
+<th id="备注">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格</td>
+<td style="text-align:center;">✓</td>
+<td>支持对齐</td>
+</tr>
+<tr>
+<td>代码</td>
+<td style="text-align:center;">✓</td>
+<td>支持高亮</td>
+</tr>
+<tr>
+<td>图片</td>
+<td style="text-align:center;">✓</td>
+<td>支持大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码示例">代码示例</h3>
+<pre><code class="javascript language-javascript">function hello() {
+    console.log("Hello, World!");
+}</code></pre>
+<h3 id="任务列表示例">任务列表示例</h3>
+<ul>
+<li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled="" style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;" checked=""> 已完成任务</li>
+<li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled="" style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;"> 未完成任务</li>
+<li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled="" style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;"> 待办事项</li>
+</ul>
+<h3 id="引用示例">引用示例</h3>
+<blockquote>
+  <p>这是一段引用文本<br>
+  可以有多行</p>
+  <blockquote>
+    <p>也可以嵌套引用</p>
+  </blockquote>
+</blockquote>
+<p>开始写作吧！</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+.form-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.error-message {
+    color: #ff4e4e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+/* 添加消息提示样式 */
+.message-toast {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.message-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message-toast.success {
+    background: rgba(16, 185, 129, 0.9);
+    backdrop-filter: blur(4px);
+}
+
+.message-toast.error {
+    background: rgba(239, 68, 68, 0.9);
+    backdrop-filter: blur(4px);
+}
+
+:root {
+    --primary-color: #6b46c1;
+    --base-font-size: 16px;
+}
+
+/* 暗色主题 */
+body {
+    font-size: var(--base-font-size);
+    color: var(--text-color);
+}
+
+body.light-mode {
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+body:not(.light-mode) {
+    --text-color: #ffffff;
+    --bg-color: #1a1a1a;
+    --glass-bg: rgba(0, 0, 0, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* 主色调应用 */
+.primary-color {
+    color: var(--primary-color);
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+} 

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - MarkdownWeb</title>
+    <script src="../js/tailwind.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/about.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-50 px-6">
+        <div class="container mx-auto flex justify-between items-center h-24">
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../img/logoweb2.png" alt="MarkdownWeb Logo" class="h-12">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="editor.html" class="text-white hover:text-gray-200">编辑器</a>
+                    <a href="documents.html" class="text-white hover:text-gray-200">文档</a>
+                    <a href="help.html" class="text-white hover:text-gray-200">帮助</a>
+                    <a href="about.html" class="text-white hover:text-gray-200">关于</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- 这里的内容会被 JS 动态更新 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 首屏：项目介绍 -->
+        <section class="min-h-[80vh] flex items-center justify-center px-6">
+            <div class="text-center animate-section">
+                <h1 class="text-6xl font-bold text-white mb-8">MarkdownWeb</h1>
+                <p class="text-xl text-white opacity-90 max-w-2xl mx-auto leading-relaxed">
+                    基于 Showdown.js 和 TailwindCSS 构建的现代化 Markdown 编辑器
+                </p>
+                <div class="mt-12">
+                    <a href="#showdown" class="text-white opacity-60 hover:opacity-100 transition-opacity">
+                        探索技术实现
+                        <div class="animate-bounce mt-4">↓</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showdown.js 介绍 -->
+        <section id="showdown" class="min-h-[70vh] flex items-center px-6 py-16">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-section">
+                        <div class="flex items-center mb-6">
+                            <img src="../img/showdownJS.png" alt="Showdown.js Logo" class="h-12 -mr-2 mt-2">
+                            <h2 class="text-4xl font-bold text-white">howdown.js</h2>
+                            
+                        </div>
+                        <p class="text-white opacity-90 mb-6 leading-relaxed">
+                            强大的 JavaScript Markdown 解析器，支持 GitHub Flavored Markdown 语法。
+                        </p>
+                        <div class="glass-effect p-6 rounded-xl space-y-4">
+                            <h3 class="text-xl font-bold text-white">核心特性</h3>
+                            <ul class="space-y-3 text-white opacity-90">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    实时预览转换
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    扩展的 Markdown 语法
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    自定义渲染规则
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="glass-effect p-6 rounded-xl animate-section delay-1">
+                        <pre class="text-white opacity-90 overflow-x-auto">
+const converter = new showdown.Converter({
+    tables: true,
+    tasklists: true,
+    strikethrough: true,
+    emoji: true,
+    extensions: [{
+        type: 'lang',
+        regex: /={2}([^=]+)={2}/g,
+        replace: '<mark>$1</mark>'
+    }]
+});</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TailwindCSS 介绍 -->
+        <section class="min-h-[70vh] flex items-center px-6 py-16">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-effect p-6 rounded-xl animate-section order-2 md:order-1">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-purple-500 text-white px-3 py-1 rounded text-sm">flex</div>
+                                <div class="bg-blue-500 text-white px-3 py-1 rounded text-sm">items-center</div>
+                                <div class="bg-green-500 text-white px-3 py-1 rounded text-sm">space-x-4</div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-red-500 text-white px-3 py-1 rounded text-sm">hover:scale-105</div>
+                                <div class="bg-yellow-500 text-white px-3 py-1 rounded text-sm">transition-all</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-section delay-1 order-1 md:order-2">
+                        <div class="flex items-center gap-4 mb-6">
+                            <h2 class="text-4xl font-bold text-white">TailwindCSS</h2>
+                            <img src="../img/tailwindcss.png" alt="TailwindCSS Logo" class="h-12">
+                        </div>
+                        <p class="text-white opacity-90 mb-6 leading-relaxed">
+                            实用优先的 CSS 框架，通过原子类构建现代化的用户界面。
+                        </p>
+                        <div class="glass-effect p-6 rounded-xl space-y-4">
+                            <h3 class="text-xl font-bold text-white">设计理念</h3>
+                            <ul class="space-y-3 text-white opacity-90">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    实用优先
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    响应式设计
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    组件提取
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 本地存储 -->
+        <section class="min-h-[60vh] flex items-center px-6 py-16">
+            <div class="container mx-auto text-center">
+                <div class="animate-section">
+                    <h2 class="text-4xl font-bold text-white mb-12">本地优先</h2>
+                    <p class="text-xl text-white opacity-90 max-w-2xl mx-auto mb-12">
+                        所有数据存储在浏览器本地，无需担心隐私问题。
+                        使用 LocalStorage 实现数据持久化，JSON序列化确保数据完整性。
+                    </p>
+                    <div class="glass-effect p-6 rounded-xl inline-block">
+                        <pre class="text-white opacity-90 text-left">localStorage.setItem('documents', 
+    JSON.stringify(documents));</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：用户体验 -->
+        <section class="min-h-[60vh] flex items-center px-6 py-16">
+            <div class="container mx-auto">
+                <div class="animate-section text-center">
+                    <h2 class="text-4xl font-bold text-white mb-8">用户体验</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-effect p-6 rounded-xl">
+                            <div class="text-4xl mb-4">🎨</div>
+                            <h3 class="text-xl font-bold text-white mb-4">现代界面</h3>
+                            <p class="text-white opacity-90">
+                                玻璃态设计、渐变背景、平滑动画，打造现代化的写作环境
+                            </p>
+                        </div>
+                        <div class="glass-effect p-6 rounded-xl">
+                            <div class="text-4xl mb-4">⚡</div>
+                            <h3 class="text-xl font-bold text-white mb-4">快捷操作</h3>
+                            <p class="text-white opacity-90">
+                                快捷键支持、工具栏、自动保存，提升写作效率
+                            </p>
+                        </div>
+                        <div class="glass-effect p-6 rounded-xl">
+                            <div class="text-4xl mb-4">📱</div>
+                            <h3 class="text-xl font-bold text-white mb-4">响应式设计</h3>
+                            <p class="text-white opacity-90">
+                                完美适配各种设备，随时随地开始写作
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 修改项目背景部分 -->
+        <section class="min-h-[60vh] flex items-center px-6 py-16">
+            <div class="container mx-auto">
+                <div class="animate-section">
+                    <h2 class="text-4xl font-bold text-white mb-12 text-center">项目背景</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- 左侧：项目起源 -->
+                        <div class="glass-effect p-8 rounded-xl">
+                            <div class="flex items-center mb-6">
+                                <div class="text-4xl mr-4">💡</div>
+                                <h3 class="text-2xl font-bold text-white">项目起源</h3>
+                            </div>
+                            <p class="text-white opacity-90 leading-relaxed">
+                                MarkdownWeb 项目源于对现代化 Markdown 编辑体验的追求。在当今的文档编辑领域，
+                                我们发现许多优秀的编辑器要么依赖后端服务，要么需要安装客户端。这促使我们思考：
+                                能否创建一个纯前端的、即开即用的 Markdown 编辑器？
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    纯前端实现
+                                </span>
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    即开即用
+                                </span>
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    无需安装
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 右侧：技术选型 -->
+                        <div class="glass-effect p-8 rounded-xl">
+                            <div class="flex items-center mb-6">
+                                <div class="text-4xl mr-4">⚙️</div>
+                                <h3 class="text-2xl font-bold text-white">技术选型</h3>
+                            </div>
+                            <p class="text-white opacity-90 leading-relaxed">
+                                通过整合 Showdown.js 的强大解析能力和 TailwindCSS 的现代化设计，
+                                我们打造了这个轻量级但功能完整的编辑器。它不仅满足了基本的文档编辑需求，
+                                还通过本地存储实现了数据持久化。
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    轻量级
+                                </span>
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    功能完整
+                                </span>
+                                <span class="bg-white bg-opacity-10 text-white px-3 py-1 rounded-full text-sm">
+                                    本地存储
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 左侧：设计理念 -->
+                        <div class="glass-effect p-8 rounded-xl md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <div class="text-4xl mr-4">🎯</div>
+                                <h3 class="text-2xl font-bold text-white">设计理念</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-3">简单但不简陋</h4>
+                                    <p class="text-white opacity-90 leading-relaxed">
+                                        追求简洁的界面设计，但不牺牲功能的完整性。让用户可以专注于写作本身。
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-3">用户体验优先</h4>
+                                    <p class="text-white opacity-90 leading-relaxed">
+                                        从用户的角度出发，提供流畅的编辑体验和直观的操作方式。
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-3">持续改��</h4>
+                                    <p class="text-white opacity-90 leading-relaxed">
+                                        保持开源开放的态度，不断收集用户反馈，持续优化和改进产品。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 修改开发者信息部分 -->
+        <section class="min-h-[60vh] flex items-center px-6 py-16">
+            <div class="container mx-auto">
+                <div class="animate-section">
+                    <h2 class="text-4xl font-bold text-white mb-8 text-center">开发者的话</h2>
+                    <div class="glass-effect p-8 rounded-xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <!-- 左侧：开发者信息 -->
+                            <div class="text-center">
+                                <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6">
+                                    <img src="../img/avatar.jpg" alt="开发者头像" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">郭晓琪</h3>
+                                <p class="text-white opacity-90 mb-6">学号:2421010607</p>
+                                <div class="flex justify-center space-x-6">
+                                    <a href="https://github.com/yukishiro01" target="_blank" 
+                                       class="flex items-center text-white hover:text-gray-200">
+                                        <span class="text-2xl mr-2">📧</span>
+                                        Github
+                                    </a>
+                                    <a href="mailto:yubanwangluo@gmail.com" 
+                                       class="flex items-center text-white hover:text-gray-200">
+                                        <span class="text-2xl mr-2">💌</span>
+                                        联系我
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 右侧：打字机效果的文字 -->
+                            <div class="space-y-6 text-white opacity-90">
+                                <p id="typewriter" class="leading-relaxed h-[300px] overflow-hidden" style="text-indent: 2em;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

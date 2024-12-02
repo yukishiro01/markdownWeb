@@ -1,0 +1,198 @@
+/* 主题模式按钮 */
+.theme-mode-btn {
+    @apply flex flex-col items-center justify-center p-4 rounded-xl glass-effect text-white transition-all;
+    min-width: 200px;
+}
+
+.theme-mode-btn:hover {
+    @apply bg-white bg-opacity-10;
+}
+
+.theme-mode-btn.active {
+    @apply bg-white bg-opacity-20;
+}
+
+/* 主题预览 */
+.theme-preview {
+    width: 100%;
+    height: 120px;
+    border-radius: 0.75rem;
+    padding: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.dark-preview {
+    background-color: #1a1a1a;
+}
+
+.light-preview {
+    background-color: #ffffff;
+}
+
+.preview-header {
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.dark-preview .preview-header {
+    background-color: #333;
+}
+
+.light-preview .preview-header {
+    background-color: #eee;
+}
+
+.preview-line {
+    height: 12px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    width: 80%;
+}
+
+.dark-preview .preview-line {
+    background-color: #444;
+}
+
+.light-preview .preview-line {
+    background-color: #ddd;
+}
+
+/* 颜色选择按钮 */
+.color-btn {
+    @apply w-12 h-12 rounded-full border-4 border-transparent transition-all;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    @apply border-white;
+}
+
+/* 字体大小滑块 */
+input[type="range"] {
+    @apply appearance-none bg-white bg-opacity-20 h-2 rounded-full;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 rounded-full bg-white cursor-pointer;
+}
+
+/* 预览区域 */
+.preview-section {
+    transition: all 0.3s ease;
+}
+
+/* 按钮样式 */
+.primary-btn {
+    @apply px-6 py-2 rounded-lg bg-white text-purple-600 font-bold hover:bg-gray-100 transition-all;
+}
+
+.secondary-btn {
+    @apply px-6 py-2 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-purple-600 transition-all;
+}
+
+/* 背景类型按钮 */
+.bg-type-btn {
+    @apply flex flex-col items-center justify-center p-4 rounded-xl glass-effect text-white transition-all hover:scale-105;
+    min-width: 200px;
+}
+
+.bg-type-btn:hover {
+    @apply bg-white bg-opacity-10;
+}
+
+.bg-type-btn.active {
+    @apply ring-2 ring-white ring-opacity-80;
+}
+
+.bg-type-btn .preview-box {
+    width: 100%;
+    height: 120px;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.bg-type-btn span {
+    @apply text-sm font-medium;
+}
+
+/* 渐变按钮 */
+.gradient-btn {
+    @apply flex flex-col items-center rounded-xl overflow-hidden transition-all hover:scale-105;
+}
+
+.gradient-btn .gradient-preview {
+    width: 100%;
+    height: 120px;
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.gradient-btn:hover .gradient-preview {
+    transform: scale(1.05);
+}
+
+.gradient-btn.active {
+    @apply ring-2 ring-white ring-opacity-80;
+}
+
+.gradient-btn span {
+    @apply text-white opacity-90 py-2 text-sm font-medium bg-white bg-opacity-10 w-full rounded-xl;
+    margin-top: 0.5rem;
+}
+
+/* 纯色按钮样式 */
+.solid-color-btn {
+    @apply flex flex-col items-center transition-all rounded-xl overflow-hidden hover:scale-105;
+    min-width: 120px;
+}
+
+.solid-color-btn .color-preview {
+    width: 100%;
+    height: 100px;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.solid-color-btn:hover .color-preview {
+    transform: scale(1.05);
+}
+
+.solid-color-btn.active {
+    @apply ring-2 ring-white ring-opacity-80;
+}
+
+.solid-color-btn .color-name {
+    @apply text-white opacity-90 py-2 text-sm font-medium bg-white bg-opacity-10 w-full rounded-xl;
+    margin-top: 0.5rem;
+}
+
+/* 颜色选择器样式 */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+input[type="color"]:hover {
+    transform: scale(1.05);
+}
+
+.theme-mode-btn span {
+    @apply text-sm font-medium bg-white bg-opacity-10 w-full py-2 rounded-xl;
+    margin-top: 0.5rem;
+} 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑器 - MarkdownWeb</title>
+    <script src="../js/tailwind.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/showdown.js"></script>
+    <script src="../js/editor.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editor.css">
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-50 px-6">
+        <div class="container mx-auto flex justify-between items-center h-24">
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="flex items-center">
+                    <img src="../img/logoweb2.png" alt="MarkdownWeb Logo" class="h-12">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="editor.html" class="text-white hover:text-gray-200">编辑器</a>
+                    <a href="documents.html" class="text-white hover:text-gray-200">文档</a>
+                    <a href="help.html" class="text-white hover:text-gray-200">帮助</a>
+                    <a href="about.html" class="text-white hover:text-gray-200">关于</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- 这里的内容会被 JS 动态更新 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-6 pt-24 pb-6">
+        <!-- 工具栏 -->
+        <div class="glass-effect p-4 rounded-xl mb-4">
+            <div class="flex flex-wrap gap-2">
+                <div class="flex items-center space-x-4">
+                    <input type="text" id="docTitle" 
+                           class="form-input px-4 py-2 rounded-lg"
+                           placeholder="请输入文档标题">
+                    <button id="saveBtn" class="toolbar-btn text-white">
+                        保存
+                    </button>
+                    <button id="exportBtn" class="toolbar-btn text-white">
+                        导出
+                    </button>
+                </div>
+                <div class="flex-1 flex flex-wrap gap-2">
+                    <!-- 文本格式化工具 -->
+                    <button class="toolbar-btn text-white" title="粗体" onclick="insertMarkdown('bold')">
+                        B
+                    </button>
+                    <button class="toolbar-btn text-white" title="斜体" onclick="insertMarkdown('italic')">
+                        I
+                    </button>
+                    <button class="toolbar-btn text-white" title="删除线" onclick="insertMarkdown('strikethrough')">
+                        S
+                    </button>
+                    
+                    <!-- 标题工具 -->
+                    <button class="toolbar-btn text-white" title="一级标题" onclick="insertMarkdown('h1')">
+                        H1
+                    </button>
+                    <button class="toolbar-btn text-white" title="二级标题" onclick="insertMarkdown('h2')">
+                        H2
+                    </button>
+                    <button class="toolbar-btn text-white" title="三级标题" onclick="insertMarkdown('h3')">
+                        H3
+                    </button>
+                    
+                    <!-- 列表工具 -->
+                    <button class="toolbar-btn text-white" title="无序列表" onclick="insertMarkdown('ul')">
+                        •
+                    </button>
+                    <button class="toolbar-btn text-white" title="有序列表" onclick="insertMarkdown('ol')">
+                        1.
+                    </button>
+                    <button class="toolbar-btn text-white" title="任务列表" onclick="insertMarkdown('task')">
+                        ☐
+                    </button>
+                    
+                    <!-- 其他工具 -->
+                    <button class="toolbar-btn text-white" title="引用" onclick="insertMarkdown('quote')">
+                        ""
+                    </button>
+                    <button class="toolbar-btn text-white" title="代码块" onclick="insertMarkdown('code')">
+                        &lt;/&gt;
+                    </button>
+                    <button class="toolbar-btn text-white" title="链接" onclick="insertMarkdown('link')">
+                        🔗
+                    </button>
+                    <button class="toolbar-btn text-white" title="图片" onclick="insertMarkdown('image')">
+                        🖼
+                    </button>
+                    <button class="toolbar-btn text-white" title="表格" onclick="insertMarkdown('table')">
+                        📊
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="helpBtn" class="toolbar-btn text-white">
+                        语法帮助
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 编辑器主体 -->
+        <div class="glass-effect p-4 rounded-xl editor-container">
+            <div class="editor-grid">
+                <!-- 编辑区域 -->
+                <div class="editor-pane">
+                    <textarea id="editor" 
+                              class="w-full p-4 rounded-lg editor-input form-input"
+                              placeholder="在这里输入 Markdown 内容..."></textarea>
+                </div>
+                <!-- 预览区域 -->
+                <div class="editor-pane">
+                    <div id="preview" 
+                         class="w-full p-4 rounded-lg preview-content text-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
