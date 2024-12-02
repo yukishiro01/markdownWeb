@@ -32,6 +32,3 @@ MarkdownWeb 是一个基于 Showdown.js 和 TailwindCSS 构建的现代化 Markd
 5. 如果需要打包成桌面应用，请使用 tauri 打包
 6. 如果需要打包成移动应用，请使用 capacitor 打包
 7. 如果需要打包成 Web 应用，请使用 vite 打包
-
-## 部署
-该项目已部署到服务器，访问地址为：[http://123.56.4.137:8080/](http://123.56.4.137:8080/)
